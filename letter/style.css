@@ -36,7 +36,7 @@ body {
     justify-self: center;
     width: 800px;
     height: 450px;
-    top: 500px;
+    top: 40vh;
     animation: late_fade_in 5s forwards ease;
 }
 
