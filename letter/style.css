@@ -1,0 +1,628 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    overflow: hidden;
+}
+
+.opening_block {
+    width: 100%;
+    height: inherit;
+    opacity: 0;
+    animation-name: pop_up, pop_down;
+    animation-duration: 1s, 1s;
+    animation-delay: 0.5s, 2.5s;
+    animation-fill-mode: forwards, forwards;
+    animation-timing-function: ease, ease;
+}
+
+.announce {
+    font-size: 25vw;
+    color: red;
+    text-align: center;
+
+}
+
+.message {
+    font-size: 40px;
+    text-align: center;
+}
+
+.envelope_outer_block {
+    opacity: 1;
+    position: absolute;
+    justify-self: center;
+    width: 800px;
+    height: 450px;
+    top: 500px;
+    animation: late_fade_in 5s forwards ease;
+}
+
+.envelope_bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+}
+
+.env_bg {
+    z-index: -30;
+}
+
+.env_cover {
+    z-index: -4;
+}
+
+.envelope_top {
+    position: absolute;
+    width: 100%;
+    top: 10px;
+}
+
+.envelope_outer_block img {
+    position: absolute;
+}
+
+.sticker {
+    position: absolute;
+    cursor: pointer;
+    width: 20%;
+    left: 40%;
+    top: 200px;
+}
+
+.letter {
+    z-index: -7;
+    top: 15px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bat {
+    left: 200px;
+    top: 200px;
+    width: 200px;
+    z-index: -8;
+}
+
+.ghost {
+    left: 200px;
+    top: 200px;
+    width: 160px;
+    z-index: -8;
+}
+
+#ghost2 {
+    transform: rotateY(180deg);
+}
+
+.paper_tape {
+    z-index: -30;
+    width: 100%;
+    height: 100%;
+    font-size: 40px;
+}
+
+.tape {
+    position: absolute;
+    background-color: #888888;
+    cursor: default;
+    opacity: 0.7;
+    width: 0px;
+    height: 80px;
+    overflow: hidden;
+    z-index: 0;
+    background-image: url(img/sticker.png);
+}
+
+#tape1 {
+    left: 0vw;
+    top: 10vh;
+}
+
+#tape2 {
+    right: 0vw;
+    top: 90vh;
+    transform: rotateZ(180deg);
+}
+
+#tape3 {
+    left: 10vw;
+    top: 0vh;
+    transform: rotateZ(90deg);
+}
+
+#tape4 {
+    right: 10vw;
+    bottom: 0vh;
+    transform: rotateZ(270deg);
+}
+
+.pumpkin {
+    z-index: 30;
+    position: absolute;
+    left: 75%;
+    top: 30%;
+    opacity: 0;
+    display: none;
+    width: 5vw;
+}
+
+.pumpkin img {
+    width: 100%;
+}
+
+
+.letter_full {
+    cursor: default;
+    display: none;
+    opacity: 0;
+    position: absolute;
+    z-index: 50;
+    width: 50vw;
+    height: 100vh;
+    left: 0;
+    right: 0;
+    margin: auto;
+    font-size: 5.5vh;
+    font-family: 'yan';
+}
+
+.letter_bg {
+    position: absolute;
+    width: 100%;
+}
+
+.letter_bg img {
+    width: 100%;
+}
+
+.letter_line {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    position: absolute;
+    left: 2.5%;
+    width: 95%;
+    height: 100%;
+}
+
+.letter_line .letter_content {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.letter_line .letter_content img {
+    width: 100%;
+}
+/* 這邊是中途加入的css */
+.envelope_top_opened {
+    animation: open_envelope 1.5s forwards ease;
+}
+
+.sticker_behide {
+    animation: layer_down 0.75s 0.5s forwards ease;
+}
+
+.sticker_hide {
+    animation: fade_out 1s 2.5s forwards ease;
+}
+
+.screen_effect {
+    animation-name: darkmode, shake;
+    animation-duration: 1s, 0.1s;
+    animation-delay: 2s, 11.2s;
+    animation-fill-mode: forwards, forwards;
+    animation-timing-function: ease, ease-in-out;
+    animation-iteration-count: 1, 5;
+}
+
+.go_top_overscreen {
+    animation: move_top 1s 3s forwards ease;
+}
+
+.fly_away1 {
+    animation: fly_route1 2s 3.25s forwards ease;
+}
+
+.fly_away2 {
+    animation: fly_route2 2.2s 3.5s forwards ease;
+}
+
+.fly_away3 {
+    animation: fly_route3 1.8s 3.4s forwards ease;
+}
+
+.fly_away4 {
+    animation: fly_route4 4s 3.35s forwards ease;
+}
+
+.fly_away5 {
+    animation: fly_route5 4s 3.6s forwards ease;
+}
+
+.lengthen_tape {
+    animation: taping 4s 4s forwards ease;
+}
+
+.pumpkin_flash {
+    display: block;
+    animation-name: fade_in_out, grow, strike;
+    animation-duration: 1s, 7s, 3s;
+    animation-delay: 4s, 4s, 11s;
+    animation-iteration-count: 5, 1, 1;
+    animation-fill-mode: forwards, forwards, forwards;
+    animation-timing-function: ease, ease, ease-in-out;
+}
+
+.envelope_hide {
+    animation: fade_out 1s 14.5s forwards ease;
+}
+
+.show_letter{
+    display: block;
+    animation: fade_in 1s 15s forwards ease;
+}
+
+
+/* 動畫區 */
+@keyframes pop_up {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+}
+
+@keyframes pop_down {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+        display: block;
+    }
+
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(0.5);
+        opacity: 0;
+        display: none;
+    }
+}
+
+@keyframes open_envelope {
+    0% {
+        transform: rotateX(0deg);
+        z-index: 0;
+    }
+
+    100% {
+        transform: rotateX(180deg);
+        z-index: -11;
+    }
+}
+
+@keyframes layer_down {
+    0% {
+        z-index: -20;
+        cursor: default;
+    }
+
+    100% {
+        z-index: -20;
+        cursor: default;
+    }
+}
+
+@keyframes fade_out {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
+
+@keyframes darkmode {
+    0% {
+        background-color: #ffffff;
+    }
+
+    100% {
+        background-color: #222222;
+    }
+}
+
+@keyframes move_top {
+    0% {
+        top: 15px;
+    }
+
+    40% {
+        top: -250px;
+    }
+
+    100% {
+        top: -1000px;
+        display: none;
+    }
+}
+
+@keyframes fly_route1 {
+    0% {
+        top: 200px;
+    }
+
+    50% {
+        top: -500px;
+        left: 500px;
+    }
+
+    100% {
+        top: -1200px;
+        left: 1350px;
+        display: none;
+    }
+}
+
+@keyframes fly_route2 {
+    0% {
+        top: 200px;
+    }
+
+    35% {
+        top: -420px;
+        left: -225px;
+    }
+
+    100% {
+        top: -1600px;
+        left: -1580px;
+        display: none;
+    }
+}
+
+@keyframes fly_route3 {
+    0% {
+        top: 200px;
+    }
+
+    40% {
+        top: -700px;
+        left: -25px;
+    }
+
+    70% {
+        top: -1000px;
+        left: -50px;
+    }
+
+    100% {
+        top: -1600px;
+        left: 0px;
+        display: none;
+    }
+}
+
+@keyframes fly_route4 {
+    0% {
+        top: 200px;
+    }
+
+    20% {
+        top: -100px;
+        left: -25px;
+        z-index: 10;
+    }
+
+    100% {
+        top: -300px;
+        left: -1400px;
+        z-index: 10;
+        display: none;
+    }
+}
+
+@keyframes fly_route5 {
+    0% {
+        top: 200px;
+    }
+
+    20% {
+        top: -100px;
+        left: 555px;
+        z-index: 10;
+    }
+
+    100% {
+        top: 350px;
+        left: 1800px;
+        z-index: 10;
+        display: none;
+    }
+}
+
+@keyframes taping {
+    0% {
+        width: 0px;
+    }
+
+    100% {
+        width: 150vw;
+    }
+}
+
+@keyframes fade_in_out {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes grow {
+    0% {
+        width: 5vw;
+    }
+
+    20% {
+        left: 10vw;
+        top: 80vh;
+    }
+
+    40% {
+        left: 60vw;
+        top: 40vh
+    }
+
+    60% {
+        left: 30vw;
+        top: 70vh;
+    }
+
+    80% {
+        left: 90vw;
+        top: 20vh;
+
+    }
+
+    99% {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    100% {
+        width: 20vw;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        top: 29vh;
+    }
+}
+
+@keyframes strike {
+    0% {
+        opacity: 0;
+    }
+
+    5% {
+        opacity: 1;
+    }
+
+    10% {
+        width: 100vw;
+    }
+
+    20% {
+        width: 20vw;
+        top: 30vh;
+    }
+
+    40% {
+        top: 35vh;
+    }
+
+    45% {
+        top: 30vh;
+    }
+
+    50% {
+        top: 35vh;
+    }
+
+    55% {
+        top: 30vh;
+    }
+
+    60% {
+        top: 35vh;
+    }
+
+    65% {
+        top: 30vh;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
+
+@keyframes shake {
+    0% {
+        transform: rotateZ(0deg);
+    }
+
+    25% {
+        transform: rotateZ(-5deg);
+    }
+
+    50% {
+        transform: rotateZ(0deg);
+    }
+
+    75% {
+        transform: rotateZ(5deg);
+    }
+
+    100% {
+        transform: rotateZ(0deg);
+    }
+}
+
+@keyframes late_fade_in {
+    0% {
+        opacity: 0;
+    }
+
+    80% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade_in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@font-face {
+    font-family: 'yan';
+    src: url('ChenYuluoyan-Thin.ttf');
+}
