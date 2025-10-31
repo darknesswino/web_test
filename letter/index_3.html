@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>酷酷的網頁</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="opening_block">
+        <div class="announce">!</div>
+        <div class="message">您收到了一則信件</div>
+    </div>
+
+    <div class="envelope_outer_block">
+        <div class="envelope_bg">
+            <img class="env_bg" src="img/env_bg2.png">
+            <img class="env_cover" src="img/env_cover.png">
+            <img class="letter" src="img/letter_half.png">
+            <img id="bat1" class="bat" src="img/bat2.png">
+            <img id="bat2" class="bat" src="img/bat2.png">
+            <img id="bat3" class="bat" src="img/bat2.png">
+            <img id="ghost1" class="ghost" src="img/ghost.png">
+            <img id="ghost2" class="ghost" src="img/ghost.png">
+        </div>
+        <div class="envelope_top">
+            <img class="env_top" src="img/env_t1.png">
+            <img class="sticker" src="img/sticker.png">
+            </div>
+        </div>
+    </div>
+    <div class="pumpkin">
+        <img src="img/sticker.png">
+    </div>
+
+    <div class="paper_tape">
+        <div id="tape1" class="tape"></div>
+        <div id="tape2" class="tape"></div>
+        <div id="tape3" class="tape"></div>
+        <div id="tape4" class="tape"></div>
+    </div>
+
+    <div class="letter_full">
+        <div class="letter_bg"><img src="img/letter.png"></div>
+        <div class="letter_line">
+            <div class="letter_content">
+                <img src="img/letter_line.png">
+                <p>耶！33，萬聖節快樂！</p>
+            </div>
+            <div class="letter_content">
+                <img src="img/letter_line.png">
+                <p>感謝妳幫我畫的這些圖片素材！
+            </div>
+            <div class="letter_content">
+                <img src="img/letter_line.png">
+                <p>真的對這個原本不太好看的網頁幫助很多！</p>
+            </div>
+            <div class="letter_content">
+                <img src="img/letter_line.png">
+                <p>以往都不太敢打擾妳們要求這些，</p>
+            </div>
+            <div class="letter_content">
+                <img src="img/letter_line.png">
+                <p>因為我多少有點懶惰，</p>
+            </div>
+            <div class="letter_content">
+                <img src="img/letter_line.png">
+                <p>如果像遊戲那種更大的專案，</p>
+            </div>
+            <div class="letter_content">
+                <img src="img/letter_line.png">
+                <p>就可能花了時間但沒有成品...</p>
+            </div>
+            <div class="letter_content">
+                <img src="img/letter_line.png">
+                <p>不過這次我也算是做完了個大概，</p>
+            </div>
+            <div class="letter_content">
+                <img src="img/letter_line.png">
+                <p>未來也請多多指教！</p>
+            </div>
+            <div class="letter_content">
+                <p style="text-align: end;">by隨緣.2025</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        const envelope_sticker = document.querySelector('.sticker');
+        envelope_sticker.addEventListener('click', () => {
+            document.querySelector('.envelope_top').classList.toggle('envelope_top_opened');
+            document.querySelector('.sticker').classList.toggle('sticker_behide');
+            document.querySelector('.sticker').classList.toggle('sticker_hide');
+            document.querySelector('body').classList.toggle('screen_effect');
+            document.querySelector('.letter').classList.toggle('go_top_overscreen');
+            document.querySelector('#bat1').classList.toggle('fly_away1');
+            document.querySelector('#bat2').classList.toggle('fly_away2');
+            document.querySelector('#bat3').classList.toggle('fly_away3');
+            document.querySelector('#ghost1').classList.toggle('fly_away4');
+            document.querySelector('#ghost2').classList.toggle('fly_away5');
+            document.querySelector('#tape1').classList.toggle('lengthen_tape');
+            document.querySelector('#tape2').classList.toggle('lengthen_tape');
+            document.querySelector('#tape3').classList.toggle('lengthen_tape');
+            document.querySelector('#tape4').classList.toggle('lengthen_tape');
+            document.querySelector('.pumpkin').classList.toggle('pumpkin_flash');
+            document.querySelector('.envelope_outer_block').classList.toggle('envelope_hide');
+            document.querySelector('.letter_full').classList.toggle('show_letter');
+            setTimeout(function () {
+                document.querySelector('.env_top').src = "img/env_t2.png";
+                document.querySelector('title').innerText = "萬聖節快樂！";
+            }, 500)
+        },{once: true});
+    </script>
+</body>
+
+</html>
